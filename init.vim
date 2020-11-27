@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+"
+"Editor behavior
+"
+>>>>>>> efceeb41e6e3c36256899f5bfb67320be2fdc0c5
 " config
 syntax on
 set number
@@ -6,6 +12,36 @@ set relativenumber
 "set norelativenumber
 " display a line
 set cursorline
+<<<<<<< HEAD
+=======
+set noexpandtab
+set tabstop=4
+set shiftwidth=4
+set autoindent
+
+" ===
+" === Terminal Behaviors
+" ===
+let g:neoterm_autoscroll = 1
+autocmd TermOpen term://* startinsert
+tnoremap <C-N> <C-\><C-N>
+tnoremap <C-O> <C-\><C-N><C-O>
+let g:terminal_color_0  = '#000000'
+let g:terminal_color_1  = '#FF5555'
+let g:terminal_color_2  = '#50FA7B'
+let g:terminal_color_3  = '#F1FA8C'
+let g:terminal_color_4  = '#BD93F9'
+let g:terminal_color_5  = '#FF79C6'
+let g:terminal_color_6  = '#8BE9FD'
+let g:terminal_color_7  = '#BFBFBF'
+let g:terminal_color_8  = '#4D4D4D'
+let g:terminal_color_9  = '#FF6E67'
+let g:terminal_color_10 = '#5AF78E'
+let g:terminal_color_11 = '#F4F99D'
+let g:terminal_color_12 = '#CAA9FA'
+let g:terminal_color_13 = '#FF92D0'
+let g:terminal_color_14 = '#9AEDFE'
+>>>>>>> efceeb41e6e3c36256899f5bfb67320be2fdc0c5
 
 
 " Compile function
@@ -19,11 +55,17 @@ func! CompileRunGcc()
 	endif
 endfunc
 
+<<<<<<< HEAD
 call plug#begin('~/.vim/plugged')
+=======
+
+call plug#begin('~/.local/share/nvim/site/autoload')
+>>>>>>> efceeb41e6e3c36256899f5bfb67320be2fdc0c5
 " table complete
 Plug 'dhruvasagar/vim-table-mode'
 " markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+<<<<<<< HEAD
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -33,6 +75,42 @@ call plug#end()
 " +++++++++++
 " Markdown-preview config
 " +++++++++++
+=======
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'markdown', 'vim-plug'] }
+Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] }
+Plug 'dkarter/bullets.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" treesitter
+Plug 'nvim-treesitter/nvim-treesitter'
+
+call plug#end()
+
+" _                      _ _   _
+"  | |_ _ __ ___  ___  ___(_) |_| |_ ___ _ __
+"| __| '__/ _ \/ _ \/ __| | __| __/ _ \ '__|
+"| |_| | |  __/  __/\__ \ | |_| ||  __/ |
+" \__|_|  \___|\___||___/_|\__|\__\___|_|
+
+" ===
+" === nvim-treesitter
+" ===
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {"typescript", "dart", "java"},     -- one of "all", "language", or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = { "c", "rust" },  -- list of language that will be disabled
+  },
+}
+EOF
+" +++++++++++
+" Markdown-preview config
+" +++++++++++
+
+>>>>>>> efceeb41e6e3c36256899f5bfb67320be2fdc0c5
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
 let g:mkdp_auto_start = 0
@@ -66,7 +144,11 @@ let g:mkdp_open_ip = ''
 
 " specify browser to open preview page
 " default: ''
+<<<<<<< HEAD
 let g:mkdp_browser = ''
+=======
+let g:mkdp_browser = 'google-chrome-stable'
+>>>>>>> efceeb41e6e3c36256899f5bfb67320be2fdc0c5
 
 " set to 1, echo preview page url in command line when open preview page
 " default is 0
@@ -120,3 +202,36 @@ let g:mkdp_port = ''
 " ${name} will be replace with the file name
 let g:mkdp_page_title = '「${name}」'
 
+<<<<<<< HEAD
+=======
+"  ____                                 __ _
+"  / ___|___   ___       ___ ___  _ __  / _(_) __ _
+" | |   / _ \ / __|____ / __/ _ \| '_ \| |_| |/ _` |
+" | |__| (_) | (_|_____| (_| (_) | | | |  _| | (_| |
+"  \____\___/ \___|     \___\___/|_| |_|_| |_|\__, |
+"                                            |___/
+"
+let g:coc_global_extensions = ['coc-java','coc-json','coc-vimlsp','coc-marketplace']
+" 
+" Tab complete
+"
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+"
+" Use <c-space> to trigger completion.
+"
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+>>>>>>> efceeb41e6e3c36256899f5bfb67320be2fdc0c5
