@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-=======
 "
 "Editor behavior
 "
->>>>>>> efceeb41e6e3c36256899f5bfb67320be2fdc0c5
 " config
 syntax on
 set number
@@ -12,8 +9,6 @@ set relativenumber
 "set norelativenumber
 " display a line
 set cursorline
-<<<<<<< HEAD
-=======
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
@@ -41,7 +36,6 @@ let g:terminal_color_11 = '#F4F99D'
 let g:terminal_color_12 = '#CAA9FA'
 let g:terminal_color_13 = '#FF92D0'
 let g:terminal_color_14 = '#9AEDFE'
->>>>>>> efceeb41e6e3c36256899f5bfb67320be2fdc0c5
 
 
 " Compile function
@@ -55,27 +49,12 @@ func! CompileRunGcc()
 	endif
 endfunc
 
-<<<<<<< HEAD
-call plug#begin('~/.vim/plugged')
-=======
 
 call plug#begin('~/.local/share/nvim/site/autoload')
->>>>>>> efceeb41e6e3c36256899f5bfb67320be2fdc0c5
 " table complete
 Plug 'dhruvasagar/vim-table-mode'
 " markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-<<<<<<< HEAD
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" coc
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-call plug#end()
-
-
-" +++++++++++
-" Markdown-preview config
-" +++++++++++
-=======
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'markdown', 'vim-plug'] }
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] }
@@ -110,7 +89,6 @@ EOF
 " Markdown-preview config
 " +++++++++++
 
->>>>>>> efceeb41e6e3c36256899f5bfb67320be2fdc0c5
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
 let g:mkdp_auto_start = 0
@@ -144,11 +122,7 @@ let g:mkdp_open_ip = ''
 
 " specify browser to open preview page
 " default: ''
-<<<<<<< HEAD
-let g:mkdp_browser = ''
-=======
 let g:mkdp_browser = 'google-chrome-stable'
->>>>>>> efceeb41e6e3c36256899f5bfb67320be2fdc0c5
 
 " set to 1, echo preview page url in command line when open preview page
 " default is 0
@@ -202,8 +176,6 @@ let g:mkdp_port = ''
 " ${name} will be replace with the file name
 let g:mkdp_page_title = '「${name}」'
 
-<<<<<<< HEAD
-=======
 "  ____                                 __ _
 "  / ___|___   ___       ___ ___  _ __  / _(_) __ _
 " | |   / _ \ / __|____ / __/ _ \| '_ \| |_| |/ _` |
@@ -234,4 +206,3 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
->>>>>>> efceeb41e6e3c36256899f5bfb67320be2fdc0c5
