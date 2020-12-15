@@ -14,6 +14,11 @@ set tabstop=4
 set shiftwidth=4
 set autoindent
 
+"code error
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+
+set termencoding=utf-8
+set encoding=utf-8
 " ===
 " === Terminal Behaviors
 " ===
@@ -64,8 +69,14 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter'
-
+"vim-airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-theme'
 call plug#end()
+
+
+"airline theme
+let g:airline_theme='simple'
 
 " _                      _ _   _
 "  | |_ _ __ ___  ___  ___(_) |_| |_ ___ _ __
